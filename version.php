@@ -12,3 +12,7 @@ $plugin->requires  = 2022041900;
  // We are in the testing phase              
 $plugin->maturity  = MATURITY_ALPHA;          
 $plugin->release   = 'v0.1';
+
+// Plugin metadata
+$plugin->author    = 'Grace Peter Mutiibwa';
+$plugin->license   = 'GNU GPL v3 or later';
