@@ -1,5 +1,5 @@
 window.atoast = new AToast();
-// ── Tab switching ─────────────────────────────────────────────────────────────
+
 document.querySelectorAll('#explorerTabs .nav-link').forEach(function (tab) {
     tab.addEventListener('click', function (e) {
         e.preventDefault();
@@ -22,7 +22,7 @@ document.querySelectorAll('#explorerTabs .nav-link').forEach(function (tab) {
 });
 
 
-// ── Settings tab: populate model dropdown from textarea ──────────────────────
+
 function refreshModelDropdown() {
     const textarea = document.getElementById('cfg-models');
     const select = document.getElementById('cfg-default-model');
@@ -45,24 +45,18 @@ if (cfgModels) {
     cfgModels.addEventListener('input', refreshModelDropdown);
 }
 
-// Set saved default on page load
-// (function initDropdown() {
-//     const select = document.getElementById('cfg-default-model');
-//     // prettier-ignore
-//     select.dataset.saved = <?php echo json_encode((string)$saved_default); ?>;
-//     refreshModelDropdown();
-// })();
+
 (function initDropdown() {
     const select = document.getElementById('cfg-default-model');
 
     if (!select) return;
 
-    // Read the value from the data attribute we just added
+    // Read the value from the data attribute 
     if (select && select.dataset.saved) {
         const savedValue = JSON.parse(select.dataset.saved);
         select.value = savedValue;
 
-        // If you still need it in dataset for refreshModelDropdown:
+        // still need it in dataset for refreshModelDropdown:
         select.dataset.saved = savedValue;
     }
 
@@ -73,7 +67,6 @@ if (cfgModels) {
 const btnSaveSettings = document.getElementById('btn-save-settings');
 
 if (btnSaveSettings) {
-    // ── Save settings ────────────────────────────────────────────────────────────
     btnSaveSettings.addEventListener('click', async function () {
         const payload = {
             sesskey: SESSKEY,
@@ -104,7 +97,6 @@ if (btnSaveSettings) {
     });
 }
 
-// ── Generate report ──────────────────────────────────────────────────────────
 document.getElementById('btn-generate').addEventListener('click', async function () {
     const btnGen = document.getElementById('btn-generate');
     const btnExp = document.getElementById('btn-export');
@@ -130,7 +122,6 @@ document.getElementById('btn-generate').addEventListener('click', async function
     // load the date
     FEEDBACK_DATA.current_date = currentDate;
 
-    console.log(FEEDBACK_DATA);
 
     try {
         const res = await fetch(GENERATE_URL, {
@@ -199,7 +190,7 @@ document.getElementById('btn-generate').addEventListener('click', async function
     }
 });
 
-// ── Export PDF ───────────────────────────────────────────────────────────────
+
 document.getElementById('btn-export').addEventListener('click', function () {
     const reportArea = document.getElementById('report-area');
     const contentArea = reportArea.querySelector('.transform-content-host-area');
@@ -216,7 +207,7 @@ document.getElementById('btn-export').addEventListener('click', function () {
 });
 
 
-// ── Auto-load saved report on page load ──────────────────────────────────────
+
 (async function loadSavedReport() {
     const reportArea = document.getElementById('report-area');
     const btnExp = document.getElementById('btn-export');

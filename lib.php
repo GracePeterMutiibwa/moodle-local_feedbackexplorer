@@ -4,9 +4,6 @@ defined('MOODLE_INTERNAL') || die();
 function local_feedbackexplorer_before_footer() {
     global $PAGE, $DB;
 
-    // DEBUG - remove after testing
-    debugging('FeedbackExplorer pagetype: ' . $PAGE->pagetype, DEBUG_DEVELOPER);
-
     // Only inject on the feedback responses page
     if ($PAGE->pagetype !== 'mod-feedback-show_entries_anon' &&
         $PAGE->pagetype !== 'mod-feedback-show_entries') {

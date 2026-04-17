@@ -45,14 +45,14 @@ echo $OUTPUT->header();
 <link rel="stylesheet" media="(prefers-color-scheme: light)" href="<?php echo $CFG->wwwroot; ?>/local/feedbackexplorer/assets/css/atom-one-light.min.css">
 <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="<?php echo $CFG->wwwroot; ?>/local/feedbackexplorer/assets/css/atom-one-dark.min.css">
 
-<!-- dependencies -->
+
 <script src="<?php echo $CFG->wwwroot; ?>/local/feedbackexplorer/assets/js/katex.min.js"></script>
 <script src="<?php echo $CFG->wwwroot; ?>/local/feedbackexplorer/assets/js/highlight.min.js"></script>
 <script src="<?php echo $CFG->wwwroot; ?>/local/feedbackexplorer/assets/js/mermaid.min.js"></script>
 
 <div id="feedback-explorer-root">
 
-    <!-- Tab Nav -->
+    
     <ul class="nav nav-tabs" id="explorerTabs">
         <li class="nav-item">
             <a class="nav-link active" href="#tab-report">
@@ -72,7 +72,7 @@ echo $OUTPUT->header();
 
     <div class="tab-content" id="explorerTabContent">
 
-        <!-- REPORT TAB -->
+       
         <div class="tab-pane fade show active" id="tab-report">
             <div class="explorer-toolbar">
                 <h4><?php echo format_string($feedback->name); ?></h4>
@@ -93,7 +93,7 @@ echo $OUTPUT->header();
             <div id="report-area"></div>
         </div>
 
-        <!-- SETTINGS TAB -->
+        
         <?php if (is_siteadmin()) : ?>
         <div class="tab-pane fade" id="tab-settings">
             <div class="settings-form">
