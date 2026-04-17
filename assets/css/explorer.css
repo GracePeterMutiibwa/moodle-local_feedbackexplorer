@@ -1,0 +1,278 @@
+/* ── Scoped to #feedback-explorer-root to avoid Bootstrap conflicts ─────── */
+:root {
+    --base-ex-color: #8d93a6;
+}
+
+#feedback-explorer-root {
+    font-family: "DM Sans", sans-serif;
+    padding: 20px 0;
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────────────────── */
+
+#feedback-explorer-root #explorerTabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 2px solid #e4e7ec;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#feedback-explorer-root #explorerTabs .nav-item {
+    margin: 0;
+}
+
+#feedback-explorer-root #explorerTabs .nav-link {
+    display: inline-block;
+    padding: 9px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b7280;
+    border: 2px solid transparent;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 140ms ease, background 140ms ease, border-color 140ms ease;
+    position: relative;
+    bottom: -2px;
+}
+
+#feedback-explorer-root #explorerTabs .nav-link:hover {
+    color: #1a1f2e;
+    background: #f6f7f9;
+}
+
+#feedback-explorer-root #explorerTabs .nav-link.active {
+    color: var(--base-ex-color);
+    background: #ffffff;
+    border-color: #e4e7ec;
+    border-bottom-color: #ffffff;
+}
+
+/* ── Tab content ──────────────────────────────────────────────────────────── */
+
+#feedback-explorer-root .tab-content {
+    background: #ffffff;
+    border: 2px solid #e4e7ec;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    padding: 24px;
+}
+
+/* ── Toolbar ──────────────────────────────────────────────────────────────── */
+
+#feedback-explorer-root .explorer-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+#feedback-explorer-root .explorer-toolbar h4 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1f2e;
+}
+
+#feedback-explorer-root .toolbar-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* ── app-styled buttons ───────────────────────────────────────────────────── */
+
+#feedback-explorer-root .app-styled {
+    appearance: none;
+    background: #ffffff;
+    color: #111111;
+    border: 2px solid #cfcfcf;
+    border-radius: 10px;
+    padding: 8px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 1.4;
+    transition: color 140ms ease, border-color 140ms ease,
+        box-shadow 140ms ease, transform 120ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55em;
+    white-space: nowrap;
+}
+
+/* SVG icon swap: show default, hide hover */
+#feedback-explorer-root .app-styled .btn-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+#feedback-explorer-root .app-styled .btn-icon--hover {
+    display: none;
+}
+
+#feedback-explorer-root .app-styled .btn-icon--default {
+    display: inline-block;
+}
+
+#feedback-explorer-root .app-styled:not(:disabled):hover .btn-icon--default {
+    display: none;
+}
+
+#feedback-explorer-root .app-styled:not(:disabled):hover .btn-icon--hover {
+    display: inline-block;
+}
+
+#feedback-explorer-root .app-styled:not(:disabled):hover {
+    border-color: #9a9a9a;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2), 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+#feedback-explorer-root .app-styled:not(:disabled):active {
+    box-shadow: none;
+    transform: translateY(1px);
+}
+
+#feedback-explorer-root .app-styled:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    pointer-events: none;
+}
+
+/* Variants */
+#feedback-explorer-root .app-styled--primary {
+    border-color: var(--base-ex-color);
+    color: var(--base-ex-color);
+}
+
+#feedback-explorer-root .app-styled--primary:not(:disabled):hover {
+    border-color: var(--base-ex-color);
+    color: var(--base-ex-color);
+}
+
+#feedback-explorer-root .app-styled--secondary {
+    border-color: #cfcfcf;
+    color: #374151;
+}
+
+#feedback-explorer-root .app-styled--success {
+    border-color: #16a34a;
+    color: #16a34a;
+}
+
+#feedback-explorer-root .app-styled--success:not(:disabled):hover {
+    border-color: #15803d;
+    color: #15803d;
+}
+
+/* ── Settings form ────────────────────────────────────────────────────────── */
+
+#feedback-explorer-root .settings-form h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1f2e;
+    margin-bottom: 20px;
+}
+
+#feedback-explorer-root .settings-form .form-group {
+    margin-bottom: 18px;
+}
+
+#feedback-explorer-root .settings-form label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+    letter-spacing: 0.03em;
+}
+
+#feedback-explorer-root .settings-form .form-control {
+    width: 100%;
+    background: #f6f7f9;
+    border: 2px solid #e4e7ec !important;
+    border-radius: 8px !important;
+    padding: 9px 13px !important;
+    font-size: 13px !important;
+    color: #1a1f2e !important;
+    box-shadow: none !important;
+    transition: border-color 140ms ease, background 140ms ease;
+    font-family: inherit;
+}
+
+#feedback-explorer-root .settings-form .form-control:focus {
+    outline: none !important;
+    border-color: var(--base-ex-color) !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(227, 117, 2, 0.12) !important;
+}
+
+#feedback-explorer-root .settings-form textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* ── Loading state ────────────────────────────────────────────────────────── */
+
+#feedback-explorer-root .fex-loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    gap: 20px;
+}
+
+#feedback-explorer-root .fex-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #e4e7ec;
+    border-top-color: var(--base-ex-color);
+    border-radius: 50%;
+    animation: fex-spin 0.8s linear infinite;
+}
+
+@keyframes fex-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#feedback-explorer-root .fex-loading-msg {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ── Error state ──────────────────────────────────────────────────────────── */
+
+#feedback-explorer-root .fex-error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    gap: 16px;
+}
+
+#feedback-explorer-root .fex-error-icon {
+    width: 48px;
+    height: 48px;
+}
+
+#feedback-explorer-root .fex-error-msg {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+    margin: 0;
+}
